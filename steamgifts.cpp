@@ -17,6 +17,8 @@ using namespace curlpp::options;
 using namespace std::experimental;
 using namespace std::chrono;
 
+string cookie;
+
 struct giveaway {
 	string link;
 	string id;
@@ -161,8 +163,7 @@ list<string> getHeaderList(string referer) {
 	string accept = "Accept: application/json, text/javascript, */*; q=0.01";
 	string acceptLang = "en-US,en;q=0.5";
 	string acceptEncoding = "gzip, deflate, br";
-	//string referer = "https://steamcommunity.com/openid/login?openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&openid.mode=checkid_setup&openid.return_to=https%3A%2F%2Fwww.steamgifts.com%2F%3Flogin&openid.realm=https%3A%2F%2Fwww.steamgifts.com&openid.ns.sreg=http%3A%2F%2Fopenid.net%2Fextensions%2Fsreg%2F1.1&openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select";
-	string cookie = "fchngipmpj4s3vkltl35vcvpi70qm0279s9kvn4putmjv9lcst17eec90qrb8hd7cbpmde3eppb80949a8eol0ci2tu2cq2lfbpmdf0";
+	//string referer = "";
 	string connection = "keep-alive";
 	string upgradeInsecureRequests = "1";
 	string cacheControl = "max-age=0";
