@@ -6,6 +6,7 @@
 #include<regex>
 #include<thread>
 #include<chrono>
+#include<fstream>
 #include<experimental/random>
 #include<curlpp/cURLpp.hpp>
 #include<curlpp/Easy.hpp>
@@ -288,6 +289,16 @@ int joinGiveaways(string url, int page) {
 }
 
 int main() {
+	ifstream file;
+	file.open("cookie");
+	if(file.is_open()) {
+		getline(file, cookie);
+	} else {
+		cout << "Could not open file 'cookie'" << endl;
+		return 1;
+	}
+	file.close();
+
 	int page = 1;
 	int points = joinGiveaways("https://www.steamgifts.com/giveaways/search?page=", page);
 	page++;
